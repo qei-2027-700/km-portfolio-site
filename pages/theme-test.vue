@@ -1,8 +1,14 @@
+
+<script setup lang="ts">
+definePageMeta({
+  title: 'テーマテスト'
+})
+</script>
+
 <template>
     <div class="p-8">
         <h1 class="text-4xl font-bold text-green-500 mb-8">テーマテストページ</h1>
 
-        <!-- 基本テスト -->
         <section class="mb-12">
             <h2 class="text-2xl font-bold mb-6">基本カラーテスト</h2>
             <div class="grid grid-cols-3 gap-4">
@@ -18,7 +24,6 @@
             </div>
         </section>
 
-        <!-- ボタンテスト -->
         <section class="mb-12">
             <h2 class="text-2xl font-bold mb-6">ボタンテスト</h2>
             <div class="flex flex-wrap gap-4">
@@ -35,10 +40,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-// テーマテストページ
-definePageMeta({
-    title: 'テーマテスト'
-})
-</script>

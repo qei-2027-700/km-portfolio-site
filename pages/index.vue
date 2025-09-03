@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'ホーム'
+})
+</script>
+
 <template>
   <div class="p-8">
     <h1 class="text-4xl font-bold text-blue-500 mb-4">ポートフォリオサイト</h1>
@@ -12,9 +18,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-definePageMeta({
-  title: 'ホーム'
-})
-</script>
