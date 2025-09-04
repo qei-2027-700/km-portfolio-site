@@ -5,24 +5,24 @@
 /* カスタムスタイル */
 :root {
   /* 深緑系 */
-  --color-primary: #1a4d3a;
+  /* --color-primary: #1a4d3a;
   --color-primary-light: #2d6b4f;
-  --color-primary-dark: #0f3329;
+  --color-primary-dark: #0f3329; */
 
   /* 茶色系 */
-  --color-secondary: #8b4513;
+  /* --color-secondary: #8b4513;
   --color-secondary-light: #a0522d;
-  --color-secondary-dark: #654321;
+  --color-secondary-dark: #654321; */
 
   /* 黒系 */
-  --color-dark: #1a1a1a;
+  /* --color-dark: #1a1a1a;
   --color-dark-light: #2d2d2d;
-  --color-dark-darker: #0d0d0d;
+  --color-dark-darker: #0d0d0d; */
 
   /* 白系 */
-  --color-light: #f8f9fa;
+  /* --color-light: #f8f9fa;
   --color-light-dark: #e9ecef;
-  --color-light-darker: #dee2e6;
+  --color-light-darker: #dee2e6; */
 }
 
 @layer base {
@@ -83,40 +83,6 @@
   /* カードコンポーネント */
   .card-hover {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20;
-  }
-
-  .card-primary {
-    @apply bg-primary-800 border border-primary-600 text-light;
-  }
-
-  .card-secondary {
-    @apply bg-secondary-800 border border-secondary-600 text-light;
-  }
-
-  /* ボタンコンポーネント */
-  .btn-primary {
-    @apply bg-primary hover:bg-primary-light text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary hover:bg-secondary-light text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
-  }
-
-  .btn-outline-primary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-200;
-  }
-
-  .btn-outline-secondary {
-    @apply border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-200;
-  }
-
-  /* テキストスタイル */
-  .text-gradient-primary {
-    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-secondary {
-    @apply bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent;
   }
 
   /* レイアウトユーティリティ */

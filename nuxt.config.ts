@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    public: {
+      appName: process.env.APP_NAME || 'KM Portfolio'
+    }
+  },
+
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -11,4 +17,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  // https://content.nuxt.com/docs/getting-started/configuration
+  content: {
+    highlight: {
+      theme: 'github-light'
+    }
+  },
 })

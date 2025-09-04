@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -7,7 +8,7 @@ const currentYear = new Date().getFullYear()
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-lg font-semibold text-white mb-4">Portfolio Site</h3>
+          <h3 class="text-lg font-semibold text-white mb-4">{{ config.public.appName }}</h3>
           <p class="text-gray-400 text-sm">
             個人ポートフォリオサイトです。スキル、経験、プロジェクトを紹介しています。
           </p>
@@ -26,15 +27,15 @@ const currentYear = new Date().getFullYear()
                 About
               </NuxtLink>
             </li>
-            <li>
+            <!-- <li>
               <NuxtLink to="/theme-test" class="text-gray-400 hover:text-white text-sm transition-colors">
                 テーマテスト
               </NuxtLink>
-            </li>
+            </li> -->
           </ul>
         </div>
 
-        <div>
+        <!-- <div>
           <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
@@ -53,12 +54,12 @@ const currentYear = new Date().getFullYear()
               </svg>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="mt-8 pt-8 border-t border-gray-700">
         <p class="text-center text-gray-400 text-sm">
-          © {{ currentYear }} Portfolio Site. All rights reserved.
+          &copy; {{ currentYear }} {{ config.public.appName }}. All rights reserved.
         </p>
       </div>
     </div>

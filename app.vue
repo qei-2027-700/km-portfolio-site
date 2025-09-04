@@ -1,6 +1,14 @@
+<script setup lang="ts">
+// Set the dark theme for the entire application
+useHead({
+  htmlAttrs: {
+    'data-theme': 'dark',
+  }
+})
+</script>
+
 <template>
-  <div class="min-h-screen bg-gray-900 text-white">
-    <NuxtRouteAnnouncer />
+  <NuxtLayout>
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
