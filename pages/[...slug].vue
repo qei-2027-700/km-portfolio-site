@@ -186,7 +186,7 @@ definePageMeta({
             <div class="stat-desc">
               <div class="rating rating-xs mt-1">
                 <div v-for="i in 4" :key="i" class="mask mask-star-2"
-                  :class="i <= getSkillLevelNumber(data.level || '') ? 'bg-primary' : 'bg-gray-600'"></div>
+                  :class="i <= getSkillLevelNumber(data.level || '') ? 'bg-accent' : 'bg-gray-600'"></div>
               </div>
             </div>
           </div>
@@ -226,7 +226,6 @@ definePageMeta({
         </div>
       </div>
 
-      <!-- Related Content -->
       <section v-if="relatedContent && relatedContent.length > 0" class="mt-12 pt-8 border-t border-gray-700">
         <h2 class="text-2xl font-bold text-white mb-6">関連コンテンツ</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -300,21 +299,56 @@ definePageMeta({
 }
 
 :deep(.prose-invert h2) {
-  font-size: 1.75em;
+  font-size: 2.25em;
   border-bottom: 2px solid #4a5568;
   padding-bottom: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
+:deep(.prose-invert h2 a) {
+  color: oklch(77% 0.152 181.912);
+}
+
+:deep(.prose-invert h3) {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+:deep(.prose-invert h3 a) {
+  color: white;
+}
+
 :deep(.prose-invert a) {
-  color: #63b3ed;
+  // color: oklch(77% 0.152 181.912);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 :deep(.prose-invert a:hover) {
   color: #90cdf4;
+}
+
+:deep(.prose-invert ul) {
+  list-style: none;
+  padding-left: 0;
+}
+
+:deep(.prose-invert li) {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+:deep(.prose-invert li::before) {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: oklch(77% 0.152 181.912);
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 :deep(.prose-invert pre) {

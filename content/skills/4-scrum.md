@@ -2,10 +2,10 @@
 title: "スクラム経験"
 description: "1sprint 1週間でのスクラム体制での開発経験"
 category: "frontend"
-level: "advanced"
+level: "intermediate"
 tags: ["Jira"]
 technologies: ["Jira"]
-icon: "🎨"
+icon: "🏉"
 date: "2024-02-01"
 order: 1
 ---

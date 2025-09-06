@@ -1,5 +1,5 @@
 ---
-title: "株式会社プロレド・パートナーズ - フルスタックエンジニア"
+title: "株式会社プロレド・パートナーズ"
 description: "toB Webアプリケーション開発"
 company: "株式会社プロレド・パートナーズ"
 position: "フルスタックエンジニア"
@@ -7,24 +7,29 @@ period: "2021年10月 - 2024年1月"
 location: "リモート"
 category: "正社員"
 type: "正社員"
-tags: ["Vue.js", "Nuxt", "Java", "SpringBoot", "Web開発", "AWS", "PostgreSQL"]
-technologies: ["Vue.js", "Nuxt", "Java", "PostgreSQL", "AWS"]
+tags: ["Vue2 / Nuxt2", "Java", "SpringBoot", "Web開発", "AWS", "PostgreSQL"]
+technologies: ["Vue2 / Nuxt2", "Java", "PostgreSQL", "AWS"]
 date: "2021-01-01"
 order: 2
 ---
 
-# 株式会社プロレド・パートナーズ - フルスタックエンジニア
+## 賃貸借物件管理Saas-Pro-Signの運用・開発
+<a href="https://pro-signcre.jp/" target="_blank" rel="noopener noreferrer">https://pro-signcre.jp/</a>
 
-## 業務内容
+### 期間
+- 2021年10月 〜 2024年1月
 
-- 中小企業向けWebサイト・Webアプリケーションの開発
-- 既存システムのリニューアルとモダン化
-- 技術コンサルティングとアーキテクチャ設計
+### 役割
+- フルスタックエンジニア
 
-## 主な成果
+### 業務内容
+- Webアプリケーションの開発・運用
 
-- 自社SaasサービスであるPro-Signの開発・運用の継続 https://pro-signcre.jp/
+### 機能・コンテンツ
+- マスタ：物件情報
+- マスタ：契約書情報
+- CSVダウンロード
+- その他アカウント情報管理
 
-## 使用技術
-
-Vue.js, Nuxt, TypeScript, Java, SprintBoot, PostgreSQL, AWS
+### その他
+- アプリケーション自体は小規模だが、その規模の割にはパラメータ数が多い、契約書データのバージョニング管理機能やデータと複雑なリレーション管理などで苦労した。

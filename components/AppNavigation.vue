@@ -14,9 +14,9 @@ const toggleMenu = () => {
 
 const navLinks = [
   { text: 'Home', to: '/' },
-  { text: 'Projects', to: '/#projects' },
   { text: 'Skills', to: '/#skills' },
   { text: 'Experiences', to: '/#experiences' },
+  { text: 'Projects', to: '/#projects' },
 ]
 </script>
 

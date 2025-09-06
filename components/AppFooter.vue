@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-white mb-4">ナビゲーション</h3>
+          <h3 class="text-lg font-semibold text-white mb-4">リンク</h3>
           <ul class="space-y-2">
             <li>
               <NuxtLink to="/" class="text-gray-400 hover:text-white text-sm transition-colors">

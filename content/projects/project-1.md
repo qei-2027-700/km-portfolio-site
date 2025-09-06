@@ -3,8 +3,8 @@ title: "中小企業DX支援Webプラットフォーム開発"
 description: "Vue.js + PHPで構成された中小企業DX支援Webプラットフォーム開発"
 category: "web"
 status: "in-progress"
-tags: ["Vue.js", "Nuxt", "TypeScript", "PostgreSQL", "PHP", "Laravel"]
-technologies: ["Vue.js", "Nuxt", "TypeScript", "PostgreSQL", "PHP", "Laravel", "FuelPHP"]
+tags: ["Vue2 / Nuxt2", "Vuetify2", "TypeScript", "PostgreSQL", "PHP", "Laravel", "Web開発"]
+technologies: ["Vue2 / Nuxt2", "Vuetify2", "TypeScript", "PostgreSQL", "PHP", "Laravel", "FuelPHP"]
 github: ""
 demo: ""
 image: "/images/ecommerce-preview.jpg"
@@ -16,7 +16,7 @@ order: 2
 
 ## プロジェクト概要
 
-Vue.js3とPHPを利用した、中小企業DX支援Webプラットフォームアプリケーションの開発・運用
+Vue.js2(一部v3)とPHPを利用した、中小企業DX支援Webプラットフォームアプリケーションの開発・運用
 
 ## 主な機能
 
@@ -48,6 +48,7 @@ Vue.js3とPHPを利用した、中小企業DX支援Webプラットフォーム�
 - 2024年2月〜2024年7月
 - 2025年3月〜現在
 
-## 主な成果
+## 体制
 
-- aaa
+- PM1名、テックリード1名、開発メンバー約9名
+

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// スムーズスクロール関数
 const smoothScrollTo = (elementId: string) => {
   const element = document.getElementById(elementId)
   if (element) {
@@ -12,7 +11,6 @@ const smoothScrollTo = (elementId: string) => {
 </script>
 
 <template>
-  <!-- 深緑系2色グラデーション背景のヒーローセクション -->
   <div class="hero min-h-screen from-success to-accent">
     <div class="hero-overlay bg-opacity-30"></div>
     <div class="hero-content text-center text-neutral-content">

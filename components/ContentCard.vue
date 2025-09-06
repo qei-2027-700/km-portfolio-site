@@ -12,7 +12,7 @@ defineProps<ContentProps>()
 </script>
 
 <template>
-  <NuxtLink :to="content._path" class="block bg-base-100 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full">
+  <NuxtLink :to="content._path" class="border border-accent block bg-base-100 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full">
   <!-- <NuxtLink :to="content._path" class="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full"> -->
     <div class="flex flex-col h-full">
       <!-- Header -->
@@ -40,7 +40,12 @@ defineProps<ContentProps>()
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span v-for="tech in content.technologies" :key="tech" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+          <span
+            v-for="tech in content.technologies"
+            :key="tech"
+            class="bg-white text-black dark:text-black text-xs font-semibold px-2.5 py-0.5 rounded-full border"
+          >
+            <!-- class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full" -->
             {{ tech }}
           </span>
         </div>

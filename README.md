@@ -2,6 +2,10 @@
 デプロイ先: Vercel
 https://km-portfolio-site-alpha.vercel.app/
 
+# TODO
+アイコン指定
+https://go-skill-icons.vercel.app/api/icons?i=nuxtjs
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
