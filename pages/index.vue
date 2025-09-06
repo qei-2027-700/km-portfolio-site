@@ -28,8 +28,8 @@ const projects = computed(() => data.value?.[2] || [])
           <ContentCard v-for="item in skills" :key="item._path" :content="item" />
         </div>
         <template #fallback>
-          <div class="text-center text-gray-600 dark:text-gray-400">
-            読み込み中...
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <SkeletonCard v-for="n in 6" :key="n" />
           </div>
         </template>
       </ClientOnly>
@@ -44,8 +44,8 @@ const projects = computed(() => data.value?.[2] || [])
           <ContentCard v-for="item in experiences" :key="item._path" :content="item" />
         </div>
         <template #fallback>
-          <div class="text-center text-gray-600 dark:text-gray-400">
-            読み込み中...
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <SkeletonCard v-for="n in 4" :key="n" />
           </div>
         </template>
       </ClientOnly>
@@ -60,8 +60,8 @@ const projects = computed(() => data.value?.[2] || [])
           <ContentCard v-for="item in projects" :key="item._path" :content="item" />
         </div>
         <template #fallback>
-          <div class="text-center text-gray-600 dark:text-gray-400">
-            読み込み中...
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <SkeletonCard v-for="n in 4" :key="n" />
           </div>
         </template>
       </ClientOnly>
