@@ -7,14 +7,15 @@ const { data, pending } = await useAsyncData('home-content', () => {
   return Promise.all([
     queryContent('/skills').sort({ order: 1 }).find(),
     queryContent('/experiences').sort({ order: 1 }).find(),
-    queryContent('/projects').sort({ order: 1 }).find()
+    queryContent('/projects').sort({ order: 1 }).find(),
+    queryContent('/creeds').sort({ order: 1 }).find()
   ])
 })
 
 const skills = computed(() => data.value?.[0] || [])
 const experiences = computed(() => data.value?.[1] || [])
 const projects = computed(() => data.value?.[2] || [])
-
+const creeds = computed(() => data.value?.[3] || [])
 </script>
 
 <template>
@@ -64,6 +65,22 @@ const projects = computed(() => data.value?.[2] || [])
       <ClientOnly>
         <div v-if="projects.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ContentCard v-for="item in projects" :key="item._path" :content="item" />
+        </div>
+        <template #fallback>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <SkeletonCard v-for="n in 4" :key="n" />
+          </div>
+        </template>
+      </ClientOnly>
+    </div>
+  </section>
+
+  <section id="creeds" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">大事にしていること</h2>
+      <ClientOnly>
+        <div v-if="creeds.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ContentCard v-for="item in creeds" :key="item._path" :content="item" />
         </div>
         <template #fallback>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -125,11 +125,23 @@ export const useCustomContent = () => {
   }
 
   /**
+   * Fetch all projects
+   */
+  const fetchCreeds = async (options: ContentQueryOptions = {}): Promise<Project[]> => {
+    return fetchContentByType<Project>('creeds', {
+      sortBy: 'date',
+      sortOrder: 'desc',
+      ...options
+    })
+  }
+
+
+  /**
    * Search content across all types
    */
   const searchContent = async (
     query: string,
-    types: ContentType[] = ['skills', 'experiences', 'projects']
+    types: ContentType[] = ['skills', 'experiences', 'projects', 'creeds']
   ): Promise<ContentMeta[]> => {
     const results: ContentMeta[] = []
 
@@ -173,7 +185,7 @@ export const useCustomContent = () => {
     }
 
     // Search across all types
-    const allTypes: ContentType[] = ['skills', 'experiences', 'projects']
+    const allTypes: ContentType[] = ['skills', 'experiences', 'projects', 'creeds']
     const results: ContentMeta[] = []
 
     for (const contentType of allTypes) {
@@ -192,7 +204,7 @@ export const useCustomContent = () => {
     tags: string[],
     limit: number = 3
   ): Promise<ContentMeta[]> => {
-    const allTypes: ContentType[] = ['skills', 'experiences', 'projects']
+    const allTypes: ContentType[] = ['skills', 'experiences', 'projects', 'creeds']
     const results: ContentMeta[] = []
 
     for (const type of allTypes) {
@@ -239,6 +251,7 @@ export const useCustomContent = () => {
     fetchSkills,
     fetchExperiences,
     fetchProjects,
+    fetchCreeds,
     searchContent,
     fetchContentByCategory,
     fetchRelatedContent

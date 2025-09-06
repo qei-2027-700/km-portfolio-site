@@ -18,14 +18,12 @@ export interface BaseContent {
   status?: string
 }
 
-// Skill content type
 export interface Skill extends BaseContent {
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert'
   icon?: string
   order?: number
 }
 
-// Experience content type  
 export interface Experience extends BaseContent {
   company: string
   position?: string
@@ -35,20 +33,20 @@ export interface Experience extends BaseContent {
   order?: number
 }
 
-// Project content type
 export interface Project extends BaseContent {
   status: 'planning' | 'in-progress' | 'completed' | 'archived'
   technologies: string[]
   order?: number
 }
 
-// Content type union
-export type ContentItem = Skill | Experience | Project
+export interface Creed extends BaseContent {
+  order?: number
+}
 
-// Content category types
-export type ContentType = 'skills' | 'experiences' | 'projects'
+export type ContentItem = Skill | Experience | Project | Creed
 
-// Content meta for card display
+export type ContentType = 'skills' | 'experiences' | 'projects' | 'creeds'
+
 export interface ContentMeta {
   title: string
   description: string
@@ -60,7 +58,6 @@ export interface ContentMeta {
   type: ContentType
 }
 
-// Query options for content fetching
 export interface ContentQueryOptions {
   limit?: number
   skip?: number

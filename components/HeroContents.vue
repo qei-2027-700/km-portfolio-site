@@ -22,7 +22,7 @@ const smoothScrollTo = (elementId: string) => {
         </h1>
         
         <p class="mb-8 text-xl text-white drop-shadow">
-          モダンなWeb開発技術を駆使したフルスタック開発者のポートフォリオ
+          Nuxt3 + Tailwindのフルスタック開発者のポートフォリオ
         </p>
         
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
@@ -43,6 +43,12 @@ const smoothScrollTo = (elementId: string) => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14-7v12a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2h10a2 2 0 012 2v4z" />
             </svg>
             Projects
+          </button>
+          <button @click="smoothScrollTo('creeds')" class="btn btn-outline btn-accent btn-lg shadow-lg hover:scale-105 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14-7v12a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2h10a2 2 0 012 2v4z" />
+            </svg>
+            Creeds
           </button>
         </div>
 

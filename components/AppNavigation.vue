@@ -17,6 +17,7 @@ const navLinks = [
   { text: 'Skills', to: '/#skills' },
   { text: 'Experiences', to: '/#experiences' },
   { text: 'Projects', to: '/#projects' },
+  { text: 'Creeds', to: '/#creeds' },
 ]
 </script>
 
@@ -62,7 +63,7 @@ const navLinks = [
             :key="link.text"
             :to="link.to"
             @click="toggleMenu"
-            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            class="block px-3 py-2 rounded-md text-accent font-medium hover:bg-gray-700"
           >
             {{ link.text }}
           </NuxtLink>

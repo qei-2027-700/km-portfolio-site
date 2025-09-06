@@ -4,10 +4,10 @@ import type { ContentItem, ContentMeta } from '../types/content'
 const route = useRoute()
 const slug = route.params.slug as string[]
 
-const contentType = slug[0] as 'skills' | 'experiences' | 'projects'
+const contentType = slug[0] as 'skills' | 'experiences' | 'projects' | 'creeds'
 const contentSlug = slug[1]
 
-if (!contentType || !contentSlug || !['skills', 'experiences', 'projects'].includes(contentType)) {
+if (!contentType || !contentSlug || !['skills', 'experiences', 'projects', 'creeds'].includes(contentType)) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page Not Found'
@@ -56,7 +56,8 @@ const getContentTypeLabel = (type: string): string => {
   const labels = {
     skills: 'スキル',
     experiences: '経験',
-    projects: 'プロジェクト'
+    projects: 'プロジェクト',
+    creeds: '大事にしていること',
   }
   return labels[type as keyof typeof labels] || type
 }
