@@ -5,13 +5,65 @@ import type {
   ContentQueryOptions,
   Skill,
   Experience,
-  Project
+  Project,
+  Creed
 } from '~/types/content'
+
+// Composable response interfaces
+export interface ContentFetchResult<T> {
+  data: T[]
+  total: number
+  hasMore: boolean
+}
+
+export interface ContentSearchResult {
+  results: ContentMeta[]
+  total: number
+  query: string
+}
+
+// Composable interface definition
+export interface UseCustomContentReturn {
+  fetchContentByType: <T extends ContentItem>(
+    type: ContentType,
+    options?: ContentQueryOptions
+  ) => Promise<T[]>
+  
+  fetchContentByPath: <T extends ContentItem>(
+    path: string
+  ) => Promise<T | null>
+  
+  fetchContentMeta: (
+    type: ContentType,
+    options?: ContentQueryOptions
+  ) => Promise<ContentMeta[]>
+  
+  fetchSkills: (options?: ContentQueryOptions) => Promise<Skill[]>
+  fetchExperiences: (options?: ContentQueryOptions) => Promise<Experience[]>
+  fetchProjects: (options?: ContentQueryOptions) => Promise<Project[]>
+  fetchCreeds: (options?: ContentQueryOptions) => Promise<Creed[]>
+  
+  searchContent: (
+    query: string,
+    types?: ContentType[]
+  ) => Promise<ContentMeta[]>
+  
+  fetchContentByCategory: (
+    category: string,
+    type?: ContentType
+  ) => Promise<ContentMeta[]>
+  
+  fetchRelatedContent: (
+    currentPath: string,
+    tags: string[],
+    limit?: number
+  ) => Promise<ContentMeta[]>
+}
 
 /**
  * Composable for managing content operations
  */
-export const useCustomContent = () => {
+export const useCustomContent = (): UseCustomContentReturn => {
 
   /**
    * Fetch all content items of a specific type
@@ -23,8 +75,7 @@ export const useCustomContent = () => {
     const { limit, skip, sortBy = 'date', sortOrder = 'desc', where } = options
 
     try {
-      // @ts-ignore - queryContent auto-import from Nuxt Content
-      let query = queryContent(`/${type}`)
+      let query = queryContent(`/${type}`) as any
 
       // Apply where conditions
       if (where) {
@@ -61,8 +112,7 @@ export const useCustomContent = () => {
     path: string
   ): Promise<T | null> => {
     try {
-      // @ts-ignore - queryContent might not be typed correctly
-      const content = await queryContent(path).findOne()
+      const content = await queryContent(path).findOne() as T
       return content as T
     } catch (error) {
       console.error(`Error fetching content at ${path}:`, error)
@@ -125,16 +175,15 @@ export const useCustomContent = () => {
   }
 
   /**
-   * Fetch all projects
+   * Fetch all creeds
    */
-  const fetchCreeds = async (options: ContentQueryOptions = {}): Promise<Project[]> => {
-    return fetchContentByType<Project>('creeds', {
-      sortBy: 'date',
+  const fetchCreeds = async (options: ContentQueryOptions = {}): Promise<Creed[]> => {
+    return fetchContentByType<Creed>('creeds', {
+      sortBy: 'order',
       sortOrder: 'desc',
       ...options
     })
   }
-
 
   /**
    * Search content across all types
