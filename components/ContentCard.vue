@@ -1,24 +1,26 @@
 <script setup lang="ts">
-interface Content {
-  icon: string
-  title: string
-  description: string
-  technologies: string[]
+import type { ContentItem } from '../types/content'
+
+interface ContentProps {
+  content: ContentItem & {
+    icon?: string
+    position?: string
+    _dir?: string
+  }
 }
-defineProps<{
-  content: Content
-}>()
+defineProps<ContentProps>()
 </script>
 
 <template>
-  <NuxtLink :to="content._path" class="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full">
+  <NuxtLink :to="content._path" class="block bg-base-100 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full">
+  <!-- <NuxtLink :to="content._path" class="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out h-full"> -->
     <div class="flex flex-col h-full">
       <!-- Header -->
       <div class="flex items-start mb-4">
         <span v-if="content.icon" class="text-3xl mr-4">{{ content.icon }}</span>
         <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ content.title }}</h3>
-          <!-- Experience-specific fields -->
+          <h3 class="text-xl font-bold text-white">{{ content.title }}</h3>
+          <!-- <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ content.title }}</h3> -->
           <div v-if="content._dir === 'experiences'" class="text-sm text-gray-500 dark:text-gray-400 mt-1">
             <p>{{ content.company }} / {{ content.position }}</p>
             <p>{{ content.period }}</p>

@@ -2,28 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* カスタムスタイル */
-:root {
-  /* 深緑系 */
-  /* --color-primary: #1a4d3a;
-  --color-primary-light: #2d6b4f;
-  --color-primary-dark: #0f3329; */
-
-  /* 茶色系 */
-  /* --color-secondary: #8b4513;
-  --color-secondary-light: #a0522d;
-  --color-secondary-dark: #654321; */
-
-  /* 黒系 */
-  /* --color-dark: #1a1a1a;
-  --color-dark-light: #2d2d2d;
-  --color-dark-darker: #0d0d0d; */
-
-  /* 白系 */
-  /* --color-light: #f8f9fa;
-  --color-light-dark: #e9ecef;
-  --color-light-darker: #dee2e6; */
-}
+/* daisyUIのネイティブ色を使用 - カスタムオーバーライドなし */
 
 @layer base {
   html {
@@ -31,7 +10,7 @@
   }
 
   body {
-    @apply bg-dark-900 text-light font-sans antialiased;
+    @apply bg-gray-900 text-gray-100 font-sans antialiased;
   }
 
   h1,
@@ -40,7 +19,7 @@
   h4,
   h5,
   h6 {
-    @apply text-light font-bold;
+    @apply text-gray-100 font-bold;
   }
 
   h1 {
@@ -56,7 +35,7 @@
   }
 
   a {
-    @apply text-primary-400 hover:text-primary-300 transition-colors duration-200;
+    @apply text-primary hover:text-accent transition-colors duration-200;
   }
 
   /* スクロールバーのスタイリング */
@@ -65,15 +44,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-dark-800;
+    @apply bg-gray-800;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary-600 rounded-full;
+    @apply bg-primary rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-500;
+    @apply bg-accent;
   }
 }
 
@@ -82,7 +61,7 @@
 
   /* カードコンポーネント */
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
 
   /* レイアウトユーティリティ */
@@ -101,5 +80,19 @@
 
   .fade-in.active {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* 真円のゆっくりとした点滅アニメーション */
+  .slow-pulse {
+    animation: slow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes slow-pulse {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 }

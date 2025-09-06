@@ -8,12 +8,19 @@ export interface BaseContent {
   date: string
   _path: string
   body: any
+  // Optional properties that may exist in any content type
+  technologies?: string[]
+  github?: string
+  demo?: string
+  company?: string
+  period?: string
+  level?: string
+  status?: string
 }
 
 // Skill content type
 export interface Skill extends BaseContent {
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert'
-  technologies?: string[]
   icon?: string
   order?: number
 }
@@ -25,7 +32,6 @@ export interface Experience extends BaseContent {
   period: string
   location?: string
   type?: 'work' | 'freelance' | 'internship' | 'volunteer'
-  technologies?: string[]
   order?: number
 }
 
@@ -33,8 +39,6 @@ export interface Experience extends BaseContent {
 export interface Project extends BaseContent {
   status: 'planning' | 'in-progress' | 'completed' | 'archived'
   technologies: string[]
-  github?: string
-  demo?: string
   order?: number
 }
 

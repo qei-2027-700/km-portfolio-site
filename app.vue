@@ -1,8 +1,9 @@
 <script setup lang="ts">
-// Set the dark theme for the entire application
+// Set the custom theme for the entire application
 useHead({
   htmlAttrs: {
-    'data-theme': 'dark',
+    // 'data-theme': 'mytheme',
+    // 'data-theme': 'dark',
   }
 })
 </script>

@@ -8,7 +8,7 @@ technologies: ["Vue3 / Nuxt3", "TypeScript", "Vuetify", "Go / Echo"]
 github: "https://github.com/"
 demo: ""
 image: "/images/portfolio-preview.jpg"
-date: "2024-08-201"
+date: "2024-08-01"
 order: 1
 ---
 

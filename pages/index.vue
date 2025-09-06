@@ -18,11 +18,16 @@ const projects = computed(() => data.value?.[2] || [])
 </script>
 
 <template>
-  <HeroContents />
+  <div class="relative">
+    <HeroContents />
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-[800px] h-[800px] border-4 border-accent rounded-full slow-pulse"></div>
+    </div>
+  </div>
 
   <section id="skills" class="py-16 bg-gray-100 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Skills</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
       <ClientOnly>
         <div v-if="skills.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ContentCard v-for="item in skills" :key="item._path" :content="item" />
@@ -36,6 +41,7 @@ const projects = computed(() => data.value?.[2] || [])
     </div>
   </section>
 
+  <!-- <section id="experiences" class="py-16 bg-gray-100 dark:bg-gray-900"> -->
   <section id="experiences" class="py-16 bg-gray-100 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Experiences</h2>

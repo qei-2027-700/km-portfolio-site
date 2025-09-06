@@ -22,15 +22,23 @@ const navLinks = [
 
 <template>
   <nav class="bg-gray-800 text-white relative">
+  <!-- <nav class="bg-gray-800 text-white relative"> -->
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center h-16">
         <div class="flex-shrink-0">
-          <a href="/" class="text-xl font-bold">{{ config.public.appName }}</a>
+          <NuxtLink to="/" class="text-xl font-bold text-white">{{ config.public.appName }}</NuxtLink>
         </div>
 
         <!-- Desktop Navigation -->
         <div v-if="!isMobile" class="hidden md:flex items-center space-x-4">
-          <a v-for="link in navLinks" :key="link.text" :href="link.to" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">{{ link.text }}</a>
+          <NuxtLink
+            v-for="link in navLinks"
+            :key="link.text"
+            :to="link.to"
+            class="px-3 py-2 rounded-md text-white text-sm font-medium hover:bg-gray-700"
+          >
+            {{ link.text }}
+          </NuxtLink>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -49,7 +57,15 @@ const navLinks = [
     <Transition name="slide-fade">
       <div v-show="isMobile && isMenuOpen" class="md:hidden absolute bg-gray-800 w-full shadow-lg">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a v-for="link in navLinks" :key="link.text" :href="link.to" @click="toggleMenu" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">{{ link.text }}</a>
+          <NuxtLink
+            v-for="link in navLinks"
+            :key="link.text"
+            :to="link.to"
+            @click="toggleMenu"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+          >
+            {{ link.text }}
+          </NuxtLink>
         </div>
       </div>
     </Transition>

@@ -22,11 +22,6 @@ const currentYear = new Date().getFullYear()
                 ホーム
               </NuxtLink>
             </li>
-            <li>
-              <NuxtLink to="/about" class="text-gray-400 hover:text-white text-sm transition-colors">
-                About
-              </NuxtLink>
-            </li>
             <!-- <li>
               <NuxtLink to="/theme-test" class="text-gray-400 hover:text-white text-sm transition-colors">
                 テーマテスト

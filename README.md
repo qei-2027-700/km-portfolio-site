@@ -1,3 +1,7 @@
+# ポートフォリオサイト
+デプロイ先: Vercel
+https://km-portfolio-site-alpha.vercel.app/
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

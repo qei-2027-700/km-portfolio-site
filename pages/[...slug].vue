@@ -14,7 +14,7 @@ if (!contentType || !contentSlug || !['skills', 'experiences', 'projects'].inclu
   })
 }
 
-const { data, pending, error } = await useLazyAsyncData(
+const { data, pending, error } = await useLazyAsyncData<ContentItem | null>(
   `content-${contentType}-${contentSlug}`,
   () => queryContent(`/${contentType}/${contentSlug}`).findOne(),
   {
@@ -33,7 +33,7 @@ const { data, pending, error } = await useLazyAsyncData(
 )
 
 // Fetch related content based on tags
-const { data: relatedContent } = await useLazyAsyncData(
+const { data: relatedContent } = await useLazyAsyncData<ContentMeta[]>(
   `related-${contentType}-${contentSlug}`,
   () => {
     if (!data.value?.tags || data.value.tags.length === 0) {
@@ -141,12 +141,12 @@ definePageMeta({
       <nav class="breadcrumbs text-sm mb-6">
         <ul class="text-gray-400">
           <li>
-            <NuxtLink to="/" class="hover:text-primary transition-colors">
+            <NuxtLink to="/" class="text-accent hover:text-primary transition-colors">
               ホーム
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="`/#${contentType}`" class="hover:text-primary transition-colors capitalize">
+            <NuxtLink :to="`/#${contentType}`" class="text-accent hover:text-primary transition-colors capitalize">
               {{ getContentTypeLabel(contentType) }}
             </NuxtLink>
           </li>
@@ -157,7 +157,7 @@ definePageMeta({
       <!-- Content Header -->
       <header class="mb-8">
         <div class="flex items-center gap-2 mb-4">
-          <span class="badge badge-primary badge-outline">
+          <span class="text-accent badge badge-primary badge-outline">
             {{ data.category }}
           </span>
           <span v-if="data.date" class="text-gray-400 text-sm">
@@ -174,12 +174,11 @@ definePageMeta({
         </p>
 
         <div v-if="data.tags && data.tags.length > 0" class="flex flex-wrap gap-2 mb-6">
-          <span v-for="tag in data.tags" :key="tag" class="badge badge-secondary badge-sm">
+          <span v-for="tag in data.tags" :key="tag" class="text-accent font-bold badge badge-neutral badge-sm">
             {{ tag }}
           </span>
         </div>
 
-        <!-- Content Type Specific Info -->
         <div class="stats shadow bg-gray-800/50 border border-gray-700 w-full">
           <div v-if="contentType === 'skills' && data.level" class="stat">
             <div class="stat-title">スキルレベル</div>
@@ -187,7 +186,7 @@ definePageMeta({
             <div class="stat-desc">
               <div class="rating rating-xs mt-1">
                 <div v-for="i in 4" :key="i" class="mask mask-star-2"
-                  :class="i <= getSkillLevelNumber(data.level) ? 'bg-primary' : 'bg-gray-600'"></div>
+                  :class="i <= getSkillLevelNumber(data.level || '') ? 'bg-primary' : 'bg-gray-600'"></div>
               </div>
             </div>
           </div>
@@ -200,7 +199,7 @@ definePageMeta({
 
           <div v-if="contentType === 'projects'" class="stat">
             <div class="stat-title">プロジェクト状況</div>
-            <div class="stat-value text-xl capitalize">{{ getStatusLabel(data.status) }}</div>
+            <div class="stat-value text-xl capitalize">{{ getStatusLabel(data.status || '') }}</div>
             <div v-if="data.github || data.demo" class="stat-desc flex gap-2 mt-1">
               <a v-if="data.github" :href="data.github" target="_blank" rel="noopener noreferrer"
                 class="link link-hover text-xs">GitHub</a>
