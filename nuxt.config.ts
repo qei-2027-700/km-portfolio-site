@@ -10,13 +10,14 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-
+  
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxthq/studio',
   ],
 
   // https://content.nuxt.com/docs/getting-started/configuration
